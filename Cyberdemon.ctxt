@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Cyberdemon
+comment0.text=\r\n\ This\ is\ the\ model\ for\ a\ enhanced\ cyberdemon,\ which\ has\r\n\ drastically\ increased\ base\ stats,\ but\ no\ bonus\ attacks\r\n\ therefore,\ we\ dont\ need\ to\ over\ ride\ any\ methods.\r\n\r\n\ @author\ Matthew\ Schilling\r\n\ @version\ 11.23.2017\r\n
+comment1.params=
+comment1.target=Cyberdemon()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Cyberdemon\r\n
+numComments=2
