@@ -7,8 +7,8 @@
  * the creature is alive or dead. The creature is also responsible for calculating
  * damage delivered based on the creature's strength (1 to str) 
  * 
- * @author (your name here)
- * @version (version number or date here)
+ * @author Matthew Schilling
+ * @version 11.27.2017
  */
 public abstract class Creature
 {
@@ -34,7 +34,6 @@ public abstract class Creature
      * @param hp the health of the creature at the start of the simulation, and the current health levels during battle
      */
     public Creature (int str, int hp) {
-       //implement this
        this.str = str;
        this.hp = hp;
        
@@ -46,7 +45,7 @@ public abstract class Creature
      * @return a value between 1 and str to be used to cause damage to another creature
      */
     public int damage(){
-        // implement this
+
         int dmg;
         dmg = Randomizer.nextInt(str)+1;
         return dmg;
@@ -58,7 +57,7 @@ public abstract class Creature
      * @return true when current hit point level is greater than zero
      */
     public boolean isAlive() {
-        //implement this
+
         boolean alive = false;
         if (hp>0)
         alive = true;
@@ -70,7 +69,7 @@ public abstract class Creature
      * @return true when current hit point level is less than or equal to zero
      */
     public boolean isDead() {
-        //implement this
+
         boolean dead = false;
         if (hp<=0)
         dead = true;
@@ -88,6 +87,10 @@ public abstract class Creature
         int take = damage;
         hp -=take;
     }
+    /**
+     * return the current hp of a creature
+     * useful for testing, and can be used to expand the program
+     */
     public int showHealth(){
         return hp;
     }

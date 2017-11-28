@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Balerog here.
+ * A subtype of the demon class, a balerog attacks twice on each attack
  *
  * @author Matthew Schilling
  * @version 11.24.2017
@@ -25,10 +25,9 @@ public class Balerog extends Demon
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * To achieve the double attack, we call the Demon's damage method twice to ensure
+     * two seperate damage values, then combine the attacks to be measured easier
+     * @return the total damage to be dealt
      */
     public int damage(){
         int deal = super.damage()+ super.damage();

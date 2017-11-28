@@ -1,10 +1,8 @@
 import java.util.Random;
 
 /**
- * Write a description of class Randomizer here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Create a single object to be used to generate random numbers where ever they are 
+ * needed throughout the program, such as calculating damage and stats of the "monsters"
  */
 public class Randomizer
 {
@@ -20,10 +18,8 @@ public class Randomizer
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Create a random object that can be called and passed arguemnts for boundries
+     * @param y An int value to represent the boundries of the random number to generate
      */
     public static int nextInt(int y)
     {

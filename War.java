@@ -1,17 +1,21 @@
 
 import java.util.ArrayList;
 /**
- * Write a description of class Battle here.
  * Create the armies and simulate the battle
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Matthew Schilling
+ * @version 11.27.2017
  */
 public class War
 {
+    //Store the monsters in array lists
     private ArrayList<Creature> good = new ArrayList<Creature>();
     private ArrayList<Creature> evil = new ArrayList<Creature>();
     
+    /**
+     * Create the two armies, letting the randomizer determine what subclasses will be
+     * added for each side. Adjust the index boundries for larger battles
+     */
     public War()
     {
         // populate the armies
@@ -36,13 +40,24 @@ public class War
     }
     /**
      * Start the "battle" by stepping through the arraylists with an
-     * index and the get method, and using 
+     * index and the get method, and using a while loop to check if each object
+     * at the index is still returning true for its isAlive method. Once a creature has
+     * taken more damage than its max health, we increment the index for that army's 
+     * arraylist to move to the next creature. This is repeated until one arraylist has
+     * been completley steeped through. And as each creature is defeated, we add +1 to 
+     * the count of fallen for that army.
+     * 
+     * There are also a few println tests in place to show what the arraylists actually
+     * contain, health levels after damage has been taken, a message as each creature
+     * is determined to be "dead", and a final body count is displayed after the loop
+     * has finished. 
      */
     public void battle(){
         int g =0;
         int e =0;
         int goodDead=0;
         int evilDead=0;
+        //a few test cases
         for(Creature here: good){
         System.out.println(here);
         int dam = here.damage();
@@ -54,29 +69,26 @@ public class War
         System.out.println(dam);
     }
         for(Creature loop: evil){
+            //lazy way to defend against index out of bounds errors
             if(g==good.size()||e==evil.size())
             break;
         while(good.get(g).isAlive()&& evil.get(e).isAlive()){
             good.get(g).takeDamage(evil.get(e).damage());
+            //make sure we are calculating the damage correctly
             System.out.println("Good HP: " + good.get(g).showHealth());
             evil.get(e).takeDamage(good.get(g).damage());
             System.out.println("Evil HP: " + evil.get(e).showHealth());
             if(good.get(g).isDead()){
-               // good.remove(g);
                 g++;
                 System.out.println("A good man has died today");
                 goodDead++;
-                // if(g==good.size()){
-                    // e = evil.size();
-
-                // }
             }
             if(evil.get(e).isDead()){
-                //evil.remove(e);
                 e++;
                 System.out.println("An evil foe was slain!");
                 evilDead++;
             }
+            //lazy way to defend against index out of bounds errors
         if(g==good.size()||e==evil.size())
         break;
     }

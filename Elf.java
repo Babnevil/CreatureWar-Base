@@ -1,6 +1,7 @@
 
 /**
- * Write a description of class Elf here.
+ * Another subclass of the creature type. An elf can proc extra damage on attack, so
+ * the damage method had to be overrided 
  *
  * @author Matthew Schilling
  * @version 11.23.2017
@@ -26,10 +27,8 @@ public class Elf extends Creature
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Override creature's damage method to allow for an elf to deal a magic attack
+     * @return the total damage to be dealt
      */
     public int damage()
     {

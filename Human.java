@@ -1,5 +1,6 @@
 /**
- * Write a description of class Human here.
+ * A basic sub class of the creature type. It is meant to represent the average man
+ * with no special abilities, therefore there are no over written methods.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -14,6 +15,7 @@ public class Human extends Creature
 
     /**
      * Constructor for objects of class Human
+     * cal the randomizer to determine random stats for each unique human object created
      */
     public Human()
     {

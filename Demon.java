@@ -1,6 +1,7 @@
 
 /**
- * This is the first level of inheritence for the demon branch
+ * This is the first level of inheritence for the demon branch. Demons have a chance
+ * to proc for 50 bonus damage when attacking.
  *
  * @author Matthew Schilling
  * @version 11.23.2017
@@ -15,7 +16,7 @@ public class Demon extends Creature
 
 
     /**
-     * Constructor for objects of class Elf
+     * Constructor for objects of class Demon
      */
     public Demon()
     {
@@ -28,10 +29,8 @@ public class Demon extends Creature
         super(hp, str);
     }
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Override the damage method, allowing for a Demon to deal 50 bonus damage 
+     * @return the total damage to be dealt
      */
     public int damage()
     {
