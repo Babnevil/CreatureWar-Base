@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Gandalf
+comment0.text=\r\n\ A\ mystery\ to\ those\ who\ know\ him,\ Gandalf\ seems\ to\ come\ and\ go\ as\ he\ pleases\r\n\ if\ the\ odds\ are\ just\ right,\ Gandalf\ may\ join\ the\ army\ of\ the\ light\r\n\ Gandalf\ has\ overpowered\ stats\ but\ no\ bonus\ abilities\ as\ of\ now\r\n\r\n\ @author\ Matthew\ Schilling\r\n\ @version\ 12.01.2017\r\n
+comment1.params=
+comment1.target=Gandalf()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Gandalf\r\n
+numComments=2
