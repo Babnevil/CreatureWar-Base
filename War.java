@@ -24,42 +24,67 @@ public class War
     {
         // populate the armies
         for(int i=0; i<goodArmy; i++){
-            int roll = Randomizer.nextInt(9);
-            if(roll ==0){
-            good.add(new Elf());
-            elfCount ++;
-        }
-            if(roll == 1){
-            good.add(new Dwarf());
-            dwarfCount ++;
-        }
-            if(roll == 2){
-            good.add(new Hobbit());
-        }
-        //had strange results with humans always being added
-            if(roll !=0 &&roll !=1 &&roll !=2){
-            good.add(new Human());
-            humanCount ++;
-        }
+            int roll = Randomizer.nextInt(4);
+            switch (roll){
+                case 0: good.add(new Elf());
+                elfCount++;
+                break;
+                case 1: good.add(new Dwarf());
+                dwarfCount++;
+                break;
+                case 2: good.add(new Hobbit());
+                hobbitCount++;
+                break;
+                case 3: good.add(new Human());
+                humanCount++;
+                break;
+            }
+            // if(roll ==0){
+            // good.add(new Elf());
+            // elfCount ++;
+        // }
+            // if(roll == 1){
+            // good.add(new Dwarf());
+            // dwarfCount ++;
+        // }
+            // if(roll == 2){
+            // good.add(new Hobbit());
+        // }
+        // //had strange results with humans always being added
+            // if(roll !=0 &&roll !=1 &&roll !=2){
+            // good.add(new Human());
+            // humanCount ++;
+        // }
         if(elfCount==1 &&dwarfCount==1 &&hobbitCount==4 &&humanCount==2){
         good.add(new Gandalf());
         System.out.println("A Wizzard arrives percisely when he means to");
     }
         }
         for(int i=0; i<evilArmy; i++){
-            int roll = Randomizer.nextInt(9);
-            if(roll ==3){
-            evil.add(new Cyberdemon());
-            cyberCount++;
-        }
-            if(roll ==5){
-            evil.add(new Balerog());
-            balerogCount ++;
-        }
-            if(roll!=3 && roll!=5){
-            evil.add(new Demon());
-            demonCount++;
-        }
+            int roll = Randomizer.nextInt(3);
+            switch (roll){
+                case 0: evil.add(new Cyberdemon());
+                cyberCount++;
+                break;
+                case 1: evil.add(new Balerog());
+                balerogCount++;
+                break;
+                case 2: evil.add(new Demon());
+                demonCount++;
+                break;
+            }
+            // if(roll ==3){
+            // evil.add(new Cyberdemon());
+            // cyberCount++;
+        // }
+            // if(roll ==5){
+            // evil.add(new Balerog());
+            // balerogCount ++;
+        // }
+            // if(roll!=3 && roll!=5){
+            // evil.add(new Demon());
+            // demonCount++;
+        // }
             
         }
         
@@ -103,9 +128,9 @@ public class War
             //begin the damage loop, which continues until an amry is defeated
         while(good.get(g).isAlive()&& evil.get(e).isAlive()){
             good.get(g).takeDamage(evil.get(e).damage());
-            //System.out.println("Good HP: " + good.get(g).showHealth());
+            System.out.println("Good HP: " + good.get(g).showHealth());
             evil.get(e).takeDamage(good.get(g).damage());
-            //System.out.println("Evil HP: " + evil.get(e).showHealth());
+            System.out.println("Evil HP: " + evil.get(e).showHealth());
             
             //check if the ally has taken enough damage to kill it
             if(good.get(g).isDead()){

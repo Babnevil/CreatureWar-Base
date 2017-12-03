@@ -32,7 +32,7 @@ public class Hobbit extends Creature
      */
     public void takeDamage(int damage) {
         int take = damage;
-        int roll = Randomizer.nextInt(1);
+        int roll = Randomizer.nextInt(2);
         if (roll == 0)
         take = 0;
         super.takeDamage(take);
