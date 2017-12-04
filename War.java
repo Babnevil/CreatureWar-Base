@@ -32,36 +32,22 @@ public class War
                 case 1: good.add(new Dwarf());
                 dwarfCount++;
                 break;
-                case 2: good.add(new Hobbit());
+                case 2:
+                good.add(new Hobbit());
                 hobbitCount++;
                 break;
                 case 3: good.add(new Human());
                 humanCount++;
                 break;
             }
-            // if(roll ==0){
-            // good.add(new Elf());
-            // elfCount ++;
-        // }
-            // if(roll == 1){
-            // good.add(new Dwarf());
-            // dwarfCount ++;
-        // }
-            // if(roll == 2){
-            // good.add(new Hobbit());
-        // }
-        // //had strange results with humans always being added
-            // if(roll !=0 &&roll !=1 &&roll !=2){
-            // good.add(new Human());
-            // humanCount ++;
-        // }
+            
         if(elfCount==1 &&dwarfCount==1 &&hobbitCount==4 &&humanCount==2){
         good.add(new Gandalf());
         System.out.println("A Wizzard arrives percisely when he means to");
     }
         }
         for(int i=0; i<evilArmy; i++){
-            int roll = Randomizer.nextInt(3);
+            int roll = Randomizer.nextInt(5);
             switch (roll){
                 case 0: evil.add(new Cyberdemon());
                 cyberCount++;
@@ -69,47 +55,64 @@ public class War
                 case 1: evil.add(new Balerog());
                 balerogCount++;
                 break;
-                case 2: evil.add(new Demon());
+                case 2: case 3: case 4:
+                evil.add(new Demon());
                 demonCount++;
                 break;
             }
-            // if(roll ==3){
-            // evil.add(new Cyberdemon());
-            // cyberCount++;
-        // }
-            // if(roll ==5){
-            // evil.add(new Balerog());
-            // balerogCount ++;
-        // }
-            // if(roll!=3 && roll!=5){
-            // evil.add(new Demon());
-            // demonCount++;
-        // }
-            
+   
         }
         
     }
     /**
+     * Methods to manually add units into the armies
+     */
+    public void addElf(){
+        good.add(new Elf());
+    }
+    public void addDwarf(){
+        good.add(new Dwarf());
+    }
+    public void addHobbit(){
+        good.add(new Hobbit());
+    }
+    public void addHuman(){
+        good.add(new Human());
+    }
+    public void addGandalf(){
+        good.add(new Gandalf());
+    }
+    public void addDemon(){
+        evil.add(new Demon());
+    }
+    public void addCyberdemon(){
+        evil.add(new Cyberdemon());
+    }
+    public void addBalerog(){
+        evil.add(new Balerog());
+    }
+    /**
      * Start the "battle" by stepping through the arraylists with an
-     * index and the get method, and using 
+     * index and the get method, and using break statements to exit the loop
      */
     public void battle(){
         int g =0;
         int e =0;
         int goodDead=0;
         int evilDead=0;
+        
         //used to ensure the array were created correctly and can be 
         //referenced to see if the damage loop seems accurate
-        for(Creature here: good){
-        System.out.println(here);
-        int dam = here.damage();
-        System.out.println(dam);
-    }
-        for(Creature there: evil){
-        System.out.println(there);
-        int dam = there.damage();
-        System.out.println(dam);
-    }
+        // for(Creature here: good){
+        // System.out.println(here);
+        // int dam = here.damage();
+        // System.out.println(dam);
+    // }
+        // for(Creature there: evil){
+        // System.out.println(there);
+        // int dam = there.damage();
+        // System.out.println(dam);
+    // }
     System.out.println(">>>>>>>Its Time For The Main Event!<<<<<<<\n");
     System.out.println("Todays battle will be fought by ");
     System.out.println("----Good----   vs   ----Evil----");
@@ -128,9 +131,9 @@ public class War
             //begin the damage loop, which continues until an amry is defeated
         while(good.get(g).isAlive()&& evil.get(e).isAlive()){
             good.get(g).takeDamage(evil.get(e).damage());
-            System.out.println("Good HP: " + good.get(g).showHealth());
+            //System.out.println("Good HP: " + good.get(g).showHealth());
             evil.get(e).takeDamage(good.get(g).damage());
-            System.out.println("Evil HP: " + evil.get(e).showHealth());
+            //System.out.println("Evil HP: " + evil.get(e).showHealth());
             
             //check if the ally has taken enough damage to kill it
             if(good.get(g).isDead()){
